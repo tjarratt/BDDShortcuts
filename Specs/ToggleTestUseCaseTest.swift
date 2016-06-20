@@ -30,6 +30,38 @@ class ToggleTestUseCaseTest: XCTestCase {
         XCTAssertEqual(firstLine, "it(\"definitely is a test\")")
     }
 
+    func testItFocusesADescribe() {
+        let lines = NSMutableArray(array: ["describe(\"good tests are definitely in the building\")"])
+        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "fdescribe(\"good tests are definitely in the building\")")
+    }
+
+    func testItUnfocusesAFocusedDescribe() {
+        let lines = NSMutableArray(array: ["fdescribe(\"sure thing boss\")"])
+        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "describe(\"sure thing boss\")")
+    }
+
+    func testItFocusesAContext() {
+        let lines = NSMutableArray(array: ["context(\"when tests are definitely in the building\")"])
+        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "fcontext(\"when tests are definitely in the building\")")
+    }
+
+    func testItUnfocusesAFocusedContext() {
+        let lines = NSMutableArray(array: ["fcontext(\"when in rome\")"])
+        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "context(\"when in rome\")")
+    }
+
     func testItRewritesTheFirstItAboveTheCursor() {
         let lines = NSMutableArray(array: [
             "it(\"definitely is a test\")",
