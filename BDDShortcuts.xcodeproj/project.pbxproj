@@ -14,6 +14,9 @@
 		F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */; };
 		F75B2B151D10DAAC00E99440 /* ToggleTestFocusCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */; };
 		F75B2B1A1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F75B2B0D1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */; };
+		F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
+		F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,11 @@
 		F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDDShortcutsExtension.swift; sourceTree = "<group>"; };
 		F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTestFocusCommand.swift; sourceTree = "<group>"; };
 		F75B2B161D10DAAC00E99440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTestUseCaseTest.swift; sourceTree = "<group>"; };
 		F7B6FCD61D0FCC8A00A42941 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F7B926B71D16849900042FBE /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7B926BB1D16849A00042FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTestUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75B2B0E1D10DAAC00E99440 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7B926B41D16849900042FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +103,7 @@
 			children = (
 				F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */,
 				F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */,
+				F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */,
 				F75B2B161D10DAAC00E99440 /* Info.plist */,
 				F75B2B101D10DAAC00E99440 /* Supporting Files */,
 			);
@@ -108,6 +123,7 @@
 			children = (
 				F75B2AFD1D10DA9800E99440 /* BDDShortcuts */,
 				F75B2B0F1D10DAAC00E99440 /* BDDShortcutsXcodeExtension */,
+				F7B926B81D16849900042FBE /* Specs */,
 				F7B6FCD51D0FCC8A00A42941 /* Frameworks */,
 				F7B6FCD41D0FCC8A00A42941 /* Products */,
 			);
@@ -118,6 +134,7 @@
 			children = (
 				F75B2AFC1D10DA9800E99440 /* BDDShortcuts.app */,
 				F75B2B0D1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex */,
+				F7B926B71D16849900042FBE /* Specs.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +145,15 @@
 				F7B6FCD61D0FCC8A00A42941 /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7B926B81D16849900042FBE /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				F7B926BB1D16849A00042FBE /* Info.plist */,
+				F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */,
+			);
+			path = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +195,22 @@
 			productReference = F75B2B0D1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
+		F7B926B61D16849900042FBE /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7B926BE1D16849A00042FBE /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				F7B926B31D16849900042FBE /* Sources */,
+				F7B926B41D16849900042FBE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = F7B926B71D16849900042FBE /* Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,6 +232,13 @@
 						DevelopmentTeamName = "Robert Jarratt";
 						ProvisioningStyle = Automatic;
 					};
+					F7B926B61D16849900042FBE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XAN2GRZS9J;
+						DevelopmentTeamName = "Robert Jarratt";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = F7B6FCCC1D0FCC7400A42941 /* Build configuration list for PBXProject "BDDShortcuts" */;
@@ -207,6 +256,7 @@
 			targets = (
 				F75B2AFB1D10DA9800E99440 /* BDDShortcuts */,
 				F75B2B0C1D10DAAC00E99440 /* BDDShortcutsXcodeExtension */,
+				F7B926B61D16849900042FBE /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -244,7 +294,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */,
+				F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */,
 				F75B2B151D10DAAC00E99440 /* ToggleTestFocusCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7B926B31D16849900042FBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */,
+				F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +351,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -321,6 +381,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -346,7 +407,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -368,6 +429,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -392,7 +454,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = BDDShortcutsXcodeExtension/BDDShortcutsXcodeExtension.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -447,7 +509,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = BDDShortcutsXcodeExtension/BDDShortcutsXcodeExtension.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -477,12 +539,110 @@
 		F7B6FCCD1D0FCC7400A42941 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
 			name = Debug;
 		};
 		F7B6FCCE1D0FCC7400A42941 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+			};
+			name = Release;
+		};
+		F7B926BF1D16849A00042FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Specs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glg.Specs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F7B926C01D16849A00042FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Specs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glg.Specs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -512,6 +672,15 @@
 			buildConfigurations = (
 				F7B6FCCD1D0FCC7400A42941 /* Debug */,
 				F7B6FCCE1D0FCC7400A42941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7B926BE1D16849A00042FBE /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7B926BF1D16849A00042FBE /* Debug */,
+				F7B926C01D16849A00042FBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

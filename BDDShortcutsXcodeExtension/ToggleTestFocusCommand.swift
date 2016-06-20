@@ -3,7 +3,26 @@ import XcodeKit
 
 class ToggleTestFocusCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: (NSError?) -> Void ) -> Void {
-        NSLog("whoops -- this is not implemented yet")
+
+        guard let selection = invocation.buffer.selections.firstObject as? XCSourceTextRange else {
+            completionHandler(NSError(domain: "glg.error-xcode-contract-changed", code: 1, userInfo: nil))
+            return
+        }
+
+        let line = selection.start.line
+        let column = selection.start.column
+
+        let toggleTestUseCase = ToggleTestUseCase()
+        do {
+            try toggleTestUseCase.toggleClosestBDDFunction(
+                inLines: invocation.buffer.lines,
+                fromLine:line,
+                column:column)
+        } catch {
+            completionHandler(NSError(domain: "glg.error.invocation-failed", code: 2, userInfo: nil))
+            return
+        }
+
         completionHandler(nil)
     }
 
