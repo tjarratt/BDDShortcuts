@@ -1,7 +1,7 @@
 import Foundation
 
 let bddFuncRegex = try! RegularExpression(
-    pattern: "\\s*(f?)(it|describe|context)\\(",
+    pattern: "\\s*(it|describe|context)\\(",
     options: .useUnixLineSeparators
 )
 

@@ -1,13 +1,16 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E73CE1F3AF44C42E36F9F2AD828277E7C8FCC55B",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E73CE1F3AF44C42E36F9F2AD828277E7C8FCC55B" : 0,
     "95438028B10BBB846574013D29F154A00556A9D1" : 0,
     "D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7815E4BC-1F9F-42C9-A6DC-27F801F2E576",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E73CE1F3AF44C42E36F9F2AD828277E7C8FCC55B" : "BDDShortcuts\/",
     "95438028B10BBB846574013D29F154A00556A9D1" : "BDDShortcuts\/Externals\/Quick\/Externals\/Nimble\/",
     "D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64" : "BDDShortcuts\/Externals\/Quick\/"
   },
@@ -24,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/quick\/quick",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:tjarratt\/BDDShortcuts.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E73CE1F3AF44C42E36F9F2AD828277E7C8FCC55B"
     }
   ]
 }
