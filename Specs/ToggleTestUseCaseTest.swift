@@ -16,7 +16,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItFocusesASingleIt() {
         let lines = NSMutableArray(array: ["it(\"definitely is a test\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "fit(\"definitely is a test\")")
@@ -24,7 +24,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItUnfocusesAFocusedIt() {
         let lines = NSMutableArray(array: ["fit(\"definitely is a test\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "it(\"definitely is a test\")")
@@ -32,7 +32,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItFocusesADescribe() {
         let lines = NSMutableArray(array: ["describe(\"good tests are definitely in the building\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "fdescribe(\"good tests are definitely in the building\")")
@@ -40,7 +40,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItUnfocusesAFocusedDescribe() {
         let lines = NSMutableArray(array: ["fdescribe(\"sure thing boss\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "describe(\"sure thing boss\")")
@@ -48,7 +48,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItFocusesAContext() {
         let lines = NSMutableArray(array: ["context(\"when tests are definitely in the building\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "fcontext(\"when tests are definitely in the building\")")
@@ -56,7 +56,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItUnfocusesAFocusedContext() {
         let lines = NSMutableArray(array: ["fcontext(\"when in rome\")"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "context(\"when in rome\")")
@@ -68,7 +68,7 @@ class ToggleTestUseCaseTest: XCTestCase {
             "it(\"most assuredly is a test\")",
             "it(\"still is a test\")"
             ])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 1, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 1, column: 12))
 
         let firstLine = lines[0] as! String
         let secondLine = lines[1] as! String
@@ -85,7 +85,7 @@ class ToggleTestUseCaseTest: XCTestCase {
             "    it(\"most assuredly is a test\")",
             "it(\"still is a test\")"
             ])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 1, column: 0)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 1, column: 0))
 
         let firstLine = lines[0] as! String
         let secondLine = lines[1] as! String
@@ -98,7 +98,7 @@ class ToggleTestUseCaseTest: XCTestCase {
 
     func testItMakesNoChangesWhenNoTestsArePresent() {
         let lines = NSMutableArray(array: ["try! goodCode(isDefinitely: inTheBuilding)"])
-        try! subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 0, column: 12)
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
 
         let firstLine = lines[0] as! String
         XCTAssertEqual(firstLine, "try! goodCode(isDefinitely: inTheBuilding)")
@@ -185,7 +185,7 @@ class ToggleTestUseCaseTest: XCTestCase {
                 "  }\n",
                 "}\n"
                 ])
-            try! self.subject?.toggleClosestBDDFunction(inLines: lines, fromLine: 53, column: 0)
+            try! self.subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 53, column: 0))
         }
     }
 

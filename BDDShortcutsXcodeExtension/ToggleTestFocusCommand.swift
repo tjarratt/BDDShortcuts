@@ -14,10 +14,10 @@ class ToggleTestFocusCommand: NSObject, XCSourceEditorCommand {
 
         let toggleTestUseCase = ToggleTestUseCase()
         do {
-            try toggleTestUseCase.toggleClosestBDDFunction(
+            try toggleTestUseCase.toggleFocusOfBDDFunction(
                 inLines: invocation.buffer.lines,
-                fromLine:line,
-                column:column)
+                cursor: Cursor(line: line, column: column)
+            )
         } catch {
             completionHandler(NSError(domain: "glg.error.invocation-failed", code: 2, userInfo: nil))
             return

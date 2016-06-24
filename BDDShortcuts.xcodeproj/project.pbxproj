@@ -17,6 +17,8 @@
 		F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */; };
 		F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
 		F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
+		F7EADFB51D1D1269009586DA /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EADFB41D1D1269009586DA /* Cursor.swift */; };
+		F7EADFB61D1D127A009586DA /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EADFB41D1D1269009586DA /* Cursor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		F7B926B71D16849900042FBE /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B926BB1D16849A00042FBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTestUseCase.swift; sourceTree = "<group>"; };
+		F7EADFB41D1D1269009586DA /* Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */,
 				F75B2B161D10DAAC00E99440 /* Info.plist */,
 				F75B2B101D10DAAC00E99440 /* Supporting Files */,
+				F7EADFB41D1D1269009586DA /* Cursor.swift */,
 			);
 			path = BDDShortcutsXcodeExtension;
 			sourceTree = "<group>";
@@ -294,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */,
+				F7EADFB51D1D1269009586DA /* Cursor.swift in Sources */,
 				F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */,
 				F75B2B151D10DAAC00E99440 /* ToggleTestFocusCommand.swift in Sources */,
 			);
@@ -305,6 +310,7 @@
 			files = (
 				F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */,
 				F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */,
+				F7EADFB61D1D127A009586DA /* Cursor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
