@@ -22,6 +22,22 @@ class ToggleTestUseCaseTest: XCTestCase {
         XCTAssertEqual(firstLine, "fit(\"definitely is a test\")")
     }
 
+    func testitFocusesAPendingIt() {
+        let lines = NSMutableArray(array: ["pit(\"definitely is a test\")"])
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "fit(\"definitely is a test\")")
+    }
+
+    func testitFocusesADisabledIt() {
+        let lines = NSMutableArray(array: ["xit(\"definitely is a test\")"])
+        try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))
+
+        let firstLine = lines[0] as! String
+        XCTAssertEqual(firstLine, "fit(\"definitely is a test\")")
+    }
+
     func testItUnfocusesAFocusedIt() {
         let lines = NSMutableArray(array: ["fit(\"definitely is a test\")"])
         try! subject?.toggleFocusOfBDDFunction(inLines: lines, cursor: Cursor(line: 0, column: 12))

@@ -22,6 +22,18 @@ struct ToggleTestUseCase {
                 return
             }
 
+            let pendingMatches = pendingBDDFuncRegex.matches(in: line, range: range)
+            if pendingMatches.count != 0 {
+                line = line.replacingOccurrences(of: "pit(", with: "fit(")
+                line = line.replacingOccurrences(of: "pdescribe(", with: "fdescribe(")
+                line = line.replacingOccurrences(of: "pcontext(", with: "fcontext(")
+                line = line.replacingOccurrences(of: "xit(", with: "fit(")
+                line = line.replacingOccurrences(of: "xdescribe(", with: "fdescribe(")
+                line = line.replacingOccurrences(of: "xcontext(", with: "fcontext(")
+                lines[reversedIndex] = line
+                return
+            }
+
             let unfocusedMatches = bddFuncRegex.matches(in: line, range: range)
             if unfocusedMatches.count == 0 {
                 continue
@@ -43,5 +55,10 @@ let bddFuncRegex = try! RegularExpression(
 
 let focusedBDDFuncRegex = try! RegularExpression(
     pattern: "\\s*f(it|describe|context)\\(",
+    options: .useUnixLineSeparators
+)
+
+let pendingBDDFuncRegex = try! RegularExpression(
+    pattern: "\\s*(x|p)(it|describe|context)\\(",
     options: .useUnixLineSeparators
 )
