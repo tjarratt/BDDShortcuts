@@ -14,6 +14,8 @@
 		F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */; };
 		F75B2B151D10DAAC00E99440 /* ToggleTestFocusCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */; };
 		F75B2B1A1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F75B2B0D1D10DAAC00E99440 /* BDDShortcutsXcodeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F76136AF1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76136AE1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift */; };
+		F76136B01D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76136AE1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift */; };
 		F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */; };
 		F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
 		F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */; };
@@ -56,6 +58,7 @@
 		F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDDShortcutsExtension.swift; sourceTree = "<group>"; };
 		F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleTestFocusCommand.swift; sourceTree = "<group>"; };
 		F75B2B161D10DAAC00E99440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76136AE1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTestLineRewriter.swift; sourceTree = "<group>"; };
 		F78A11821D168982008F27F7 /* ToggleTestUseCaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTestUseCaseTest.swift; sourceTree = "<group>"; };
 		F7B6FCD61D0FCC8A00A42941 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7B926B71D16849900042FBE /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +110,7 @@
 				F75B2B121D10DAAC00E99440 /* BDDShortcutsExtension.swift */,
 				F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */,
 				F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */,
+				F76136AE1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift */,
 				F75B2B161D10DAAC00E99440 /* Info.plist */,
 				F75B2B101D10DAAC00E99440 /* Supporting Files */,
 				F7EADFB41D1D1269009586DA /* Cursor.swift */,
@@ -300,6 +304,7 @@
 				F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */,
 				F7EADFB51D1D1269009586DA /* Cursor.swift in Sources */,
 				F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */,
+				F76136AF1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift in Sources */,
 				F75B2B151D10DAAC00E99440 /* ToggleTestFocusCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */,
+				F76136B01D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift in Sources */,
 				F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */,
 				F7EADFB61D1D127A009586DA /* Cursor.swift in Sources */,
 			);

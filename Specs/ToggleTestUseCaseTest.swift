@@ -7,7 +7,9 @@ class ToggleTestUseCaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        subject = ToggleTestUseCase()
+        let rewriter = FocusTestLineRewriterImpl()
+
+        subject = ToggleTestUseCase(rewriter: rewriter)
     }
     
     override func tearDown() {

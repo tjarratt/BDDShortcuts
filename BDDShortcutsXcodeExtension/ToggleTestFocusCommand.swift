@@ -12,7 +12,9 @@ class ToggleTestFocusCommand: NSObject, XCSourceEditorCommand {
         let line = selection.start.line
         let column = selection.start.column
 
-        let toggleTestUseCase = ToggleTestUseCase()
+        let rewriter = FocusTestLineRewriterImpl()
+        let toggleTestUseCase = ToggleTestUseCase(rewriter: rewriter)
+
         do {
             try toggleTestUseCase.toggleFocusOfBDDFunction(
                 inLines: invocation.buffer.lines,
