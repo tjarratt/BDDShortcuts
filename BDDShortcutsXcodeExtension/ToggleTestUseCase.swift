@@ -2,63 +2,82 @@ import Foundation
 
 struct ToggleTestUseCase {
     func toggleFocusOfBDDFunction(inLines lines: NSMutableArray, cursor: Cursor) throws {
-        for i in 0 ..< cursor.line + 1 {
-            let reversedIndex = cursor.line - i
-
-            let element = lines[reversedIndex]
-            guard var line: String = element as? String else {
+        for i in (0 ..< cursor.line + 1).reversed() {
+            let element = lines[i]
+            guard let line: String = element as? String else {
                 return
             }
 
-            let lengthOfLineToMatch = reversedIndex == cursor.line ? cursor.column : line.characters.count
-            let range = NSRange(location: 0, length: lengthOfLineToMatch)
+            let columnIndex = String.IndexDistance.init(cursor.column)
+            let endOfLineIndex = String.IndexDistance.init(line.characters.count)
+            let offset = i == cursor.line ? columnIndex : endOfLineIndex
+            let index = line.index(line.startIndex, offsetBy: offset)
+            let substring = line.substring(to: index)
 
-            let focusedMatches = focusedBDDFuncRegex.matches(in: line, range: range)
-            if focusedMatches.count != 0 {
-                line = line.replacingOccurrences(of: "fit(", with: "it(")
-                line = line.replacingOccurrences(of: "fdescribe(", with: "describe(")
-                line = line.replacingOccurrences(of: "fcontext(", with: "context(")
-                lines[reversedIndex] = line
+            if replacesFunc(in: lines, fullLine: line, searchIn: substring, index: i) {
                 return
             }
-
-            let pendingMatches = pendingBDDFuncRegex.matches(in: line, range: range)
-            if pendingMatches.count != 0 {
-                line = line.replacingOccurrences(of: "pit(", with: "fit(")
-                line = line.replacingOccurrences(of: "pdescribe(", with: "fdescribe(")
-                line = line.replacingOccurrences(of: "pcontext(", with: "fcontext(")
-                line = line.replacingOccurrences(of: "xit(", with: "fit(")
-                line = line.replacingOccurrences(of: "xdescribe(", with: "fdescribe(")
-                line = line.replacingOccurrences(of: "xcontext(", with: "fcontext(")
-                lines[reversedIndex] = line
-                return
-            }
-
-            let unfocusedMatches = bddFuncRegex.matches(in: line, range: range)
-            if unfocusedMatches.count == 0 {
-                continue
-            }
-
-            line = line.replacingOccurrences(of: "it(", with: "fit(")
-            line = line.replacingOccurrences(of: "describe(", with: "fdescribe(")
-            line = line.replacingOccurrences(of: "context(", with: "fcontext(")
-            lines[reversedIndex] = line
-            return
         }
+    }
+
+    private func replacesFunc(in lines: NSMutableArray, fullLine: String, searchIn: String, index: Int) -> Bool {
+        let pairs = [
+            searchIn.focusedBDDSubstring(),
+            searchIn.pendingBDDSubstring(),
+            searchIn.unfocusedBDDSubstring(),
+        ]
+
+        for i in 0 ..< pairs.count {
+            if let (old, new) = pairs[i] {
+                lines[index] = fullLine.replacingOccurrences(of: old, with: new)
+                return true
+            }
+        }
+
+        return false
     }
 }
 
-let bddFuncRegex = try! RegularExpression(
-    pattern: "\\s*(it|describe|context)\\(",
-    options: .useUnixLineSeparators
-)
+extension String {
+    func focusedBDDSubstring() -> (String, String)? {
+        if self.contains("fit(") {
+            return ("fit(", "it(")
+        } else if self.contains("fdescribe(") {
+            return ("fdescribe(", "describe(")
+        } else if self.contains("fcontext(") {
+            return ("fcontext(", "context(")
+        }
 
-let focusedBDDFuncRegex = try! RegularExpression(
-    pattern: "\\s*f(it|describe|context)\\(",
-    options: .useUnixLineSeparators
-)
+        return nil
+    }
 
-let pendingBDDFuncRegex = try! RegularExpression(
-    pattern: "\\s*(x|p)(it|describe|context)\\(",
-    options: .useUnixLineSeparators
-)
+    func unfocusedBDDSubstring() -> (String, String)? {
+        if self.contains("it(") {
+            return ("it(", "fit(")
+        } else if self.contains("describe(") {
+            return ("describe(", "fdescribe(")
+        } else if self.contains("context(") {
+            return ("context(", "fcontext(")
+        }
+
+        return nil
+    }
+
+    func pendingBDDSubstring() -> (String, String)? {
+        var result: String?
+        ["pit(", "xit(", "pdescribe(", "xdescribe(", "pcontext(", "xcontext("].forEach { (pendingFunc) in
+            if self.contains(pendingFunc) {
+                result = pendingFunc
+            }
+        }
+
+        if var r = result {
+            let pendingFunc = r
+            r.remove(at: r.startIndex)
+            let focusedFunc = "f" + r
+            return (pendingFunc, focusedFunc)
+        }
+
+        return nil
+    }
+}
