@@ -38,6 +38,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Focus/Unfocus Test under cursor</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).ToggleTestFocusCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>com.glg.BDDShortcuts.BDDShortcutsXcodeExtension.ToggleTestDisableCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Disable/Enable Test under cursor</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).BDDShortcutsExtension</string>

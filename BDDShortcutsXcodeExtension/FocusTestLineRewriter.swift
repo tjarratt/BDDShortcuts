@@ -18,7 +18,7 @@ struct FocusTestLineRewriter : ToggleTestLineRewriter {
         return false
     }
 
-    func focusedBDDSubstring(_ string: String) -> (String, String)? {
+    private func focusedBDDSubstring(_ string: String) -> (String, String)? {
         if string.contains("fit(") {
             return ("fit(", "it(")
         } else if string.contains("fdescribe(") {
@@ -30,7 +30,7 @@ struct FocusTestLineRewriter : ToggleTestLineRewriter {
         return nil
     }
 
-    func unfocusedBDDSubstring(_ string: String) -> (String, String)? {
+    private func unfocusedBDDSubstring(_ string: String) -> (String, String)? {
         if string.contains("it(") {
             return ("it(", "fit(")
         } else if string.contains("describe(") {
@@ -42,7 +42,7 @@ struct FocusTestLineRewriter : ToggleTestLineRewriter {
         return nil
     }
 
-    func pendingBDDSubstring(_ string: String) -> (String, String)? {
+    private func pendingBDDSubstring(_ string: String) -> (String, String)? {
         var result: String?
         ["pit(", "xit(", "pdescribe(", "xdescribe(", "pcontext(", "xcontext("].forEach { (pendingFunc) in
             if string.contains(pendingFunc) {
