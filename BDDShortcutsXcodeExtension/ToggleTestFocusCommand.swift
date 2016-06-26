@@ -5,14 +5,14 @@ class ToggleTestFocusCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: (NSError?) -> Void ) -> Void {
 
         guard let selection = invocation.buffer.selections.firstObject as? XCSourceTextRange else {
-            completionHandler(NSError(domain: "glg.error-xcode-contract-changed", code: 1, userInfo: nil))
+            completionHandler(NSError(domain: "glg.error-xcode-contract-changed-whoops!", code: 1, userInfo: nil))
             return
         }
 
         let line = selection.start.line
         let column = selection.start.column
 
-        let rewriter = FocusTestLineRewriterImpl()
+        let rewriter = FocusTestLineRewriter()
         let toggleTestUseCase = ToggleTestUseCase(rewriter: rewriter)
 
         do {

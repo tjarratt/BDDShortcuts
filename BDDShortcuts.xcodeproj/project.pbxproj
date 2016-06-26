@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F73542431D1F552700F2BA94 /* FocusTestLineRewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73542421D1F552700F2BA94 /* FocusTestLineRewriter.swift */; };
+		F73542441D1F552700F2BA94 /* FocusTestLineRewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73542421D1F552700F2BA94 /* FocusTestLineRewriter.swift */; };
 		F75B2AFF1D10DA9800E99440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B2AFE1D10DA9800E99440 /* AppDelegate.swift */; };
 		F75B2B011D10DA9800E99440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75B2B001D10DA9800E99440 /* Assets.xcassets */; };
 		F75B2B041D10DA9800E99440 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75B2B021D10DA9800E99440 /* MainMenu.xib */; };
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F73542421D1F552700F2BA94 /* FocusTestLineRewriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusTestLineRewriter.swift; sourceTree = "<group>"; };
 		F75B2AFC1D10DA9800E99440 /* BDDShortcuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDDShortcuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75B2AFE1D10DA9800E99440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F75B2B001D10DA9800E99440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 				F75B2B141D10DAAC00E99440 /* ToggleTestFocusCommand.swift */,
 				F7D5A5531D1289770060AFEA /* ToggleTestUseCase.swift */,
 				F76136AE1D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift */,
+				F73542421D1F552700F2BA94 /* FocusTestLineRewriter.swift */,
 				F75B2B161D10DAAC00E99440 /* Info.plist */,
 				F75B2B101D10DAAC00E99440 /* Supporting Files */,
 				F7EADFB41D1D1269009586DA /* Cursor.swift */,
@@ -301,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73542431D1F552700F2BA94 /* FocusTestLineRewriter.swift in Sources */,
 				F75B2B131D10DAAC00E99440 /* BDDShortcutsExtension.swift in Sources */,
 				F7EADFB51D1D1269009586DA /* Cursor.swift in Sources */,
 				F7D5A5541D1289770060AFEA /* ToggleTestUseCase.swift in Sources */,
@@ -315,6 +320,7 @@
 			files = (
 				F78A11831D168982008F27F7 /* ToggleTestUseCaseTest.swift in Sources */,
 				F76136B01D1F4F3D00C82BE3 /* ToggleTestLineRewriter.swift in Sources */,
+				F73542441D1F552700F2BA94 /* FocusTestLineRewriter.swift in Sources */,
 				F78A11841D168A5A008F27F7 /* ToggleTestUseCase.swift in Sources */,
 				F7EADFB61D1D127A009586DA /* Cursor.swift in Sources */,
 			);
