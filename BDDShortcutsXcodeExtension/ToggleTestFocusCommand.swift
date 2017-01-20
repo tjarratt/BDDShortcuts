@@ -2,7 +2,7 @@ import Foundation
 import XcodeKit
 
 class ToggleTestFocusCommand: NSObject, XCSourceEditorCommand {
-    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: (NSError?) -> Void ) -> Void {
+    func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         guard let selection = invocation.buffer.selections.firstObject as? XCSourceTextRange else {
             completionHandler(NSError(domain: "glg.error-xcode-contract-changed-whoops!", code: 1, userInfo: nil))
             return
